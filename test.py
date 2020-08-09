@@ -13,7 +13,6 @@ class TestCaseForCalculator(unittest.TestCase):
         response_data = self.app.get('/')
         self.assertEqual(b'Usage;\n<Operation>?A=<Value1>&B=<Value2>\n', response_data.data)
 
-
     def test_min(self):
         # when A contains integer values
         response_data = self.app.get('/min?A=5,3,1,10,15')
@@ -30,7 +29,6 @@ class TestCaseForCalculator(unittest.TestCase):
         # When A is non number type
         response_data = self.app.get('/min?A=5,3.2,1.4,e,r,15')
 
-        
     def test_max(self):
         # when A contains integer values
         response_data = self.app.get('/max?A=5,3,1,10,15')
@@ -47,7 +45,6 @@ class TestCaseForCalculator(unittest.TestCase):
         # When A is non number type
         response_data = self.app.get('/max?A=5,3.2,k,l,10,15')
         self.assertEqual(b"Enter numbers in the correct format", response_data.data)
-
 
     def test_median(self):
         # when A contains integer values and even digits

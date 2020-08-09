@@ -122,9 +122,7 @@ def mean():
 @app.route('/avg')
 def avg():
     sum = 0
-    value1 = str(request.args.get
-
-                 ('A'))
+    value1 = str(request.args.get('A'))
     value1 = value1.split(',')
     try:
         for i in value1:
