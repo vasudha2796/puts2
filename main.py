@@ -21,7 +21,7 @@ def addition():
 @app.route('/min')
 def min():
     value = []
-    value1 = str(request.args.get('A'))
+    value1 = str(request.args.get('X'))
     value1 = value1.split(',')
     try:
         value1.sort()
@@ -41,7 +41,7 @@ def min():
 @app.route('/max')
 def max():
     value = []
-    value1 = str(request.args.get('A'))
+    value1 = str(request.args.get('X'))
     value1 = value1.split(',')
     try:
         value1.sort()
@@ -61,7 +61,7 @@ def max():
 @app.route('/median')
 def median():
     value = []
-    value1 = str(request.args.get('A'))
+    value1 = str(request.args.get('X'))
     value1 = value1.split(',')
     try:
         value1.sort()
@@ -82,7 +82,7 @@ def median():
 @app.route('/average')
 def average():
     sum = 0
-    value1 = str(request.args.get('A'))
+    value1 = str(request.args.get('X'))
     value1 = value1.split(',')
     try:
         for i in value1:
@@ -102,7 +102,7 @@ def average():
 @app.route('/mean')
 def mean():
     sum = 0
-    value1 = str(request.args.get('A'))
+    value1 = str(request.args.get('X'))
     value1 = value1.split(',')
     try:
         for i in value1:
@@ -122,7 +122,7 @@ def mean():
 @app.route('/avg')
 def avg():
     sum = 0
-    value1 = str(request.args.get('A'))
+    value1 = str(request.args.get('X'))
     value1 = value1.split(',')
     try:
         for i in value1:
