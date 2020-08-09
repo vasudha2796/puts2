@@ -17,6 +17,26 @@ def addition():
     result = value1 + value2
     return '%d \n' % result
 
+  
+@app.route('/min')
+def min():
+    value = []
+    value1 = str(request.args.get('A'))
+    value1 = value1.split(',')
+    try:
+        value1.sort()
+        for i in value1:
+            i = float(i)
+            value.append(i)
+        value.sort()
+        if value[0].is_integer():
+            return '%d \n' % value[0]
+        else:
+            return '%f \n' % value[0]
+    except ValueError:
+        warning = "Enter numbers in the correct format"
+        return warning
+
 
 @app.route('/max')
 def max():
