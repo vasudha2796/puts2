@@ -1,3 +1,5 @@
+import statistics
+
 from flask import Flask, request
 
 app = Flask(__name__)
@@ -16,6 +18,25 @@ def addition():
     return '%d \n' % result
 
 
+
+@app.route('/median')
+def median():
+    value = []
+    value1 = str(request.args.get('A'))
+    value1 = value1.split(',')
+    try:
+        value1.sort()
+        for i in value1:
+            i = float(i)
+            value.append(i)
+
+        med = statistics.median(value)
+        if med.is_integer():
+            return '%d \n' % med
+        else:
+            return '%.3f \n' % med
+
+          
 @app.route('/average')
 def average():
     sum = 0
@@ -73,6 +94,7 @@ def avg():
             return '%d \n' % averag
         else:
             return '%.3f \n' % averag
+
     except ValueError:
         warning = "Enter numbers in the correct format"
         return warning
